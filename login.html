@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title> 白狼栈 </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap-3.3.4.min.css" rel="stylesheet">
+    <link href="./css/font-awesome-4.3.0.min.css" rel="stylesheet">
+    <link href="./css/site.css" rel="stylesheet">
+    <link href="./css/simplemde.min.css" rel="stylesheet">
+    <link href="./css/layer.css" rel="stylesheet" id="layuicss-skinlayercss">
+</head>
+<body class="home-template">
+
+<nav class="navbar navbar-inverse site-navbar"> <!-- navbar-fixed-top 固定导航栏 -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand" style="cursor: pointer;">白狼栈</span>
+        </div>
+        <!-- <div id="navbar" class="collapse navbar-collapse" style="overflow: auto!important;"> -->
+        <div id="navbar" class="collapse navbar-collapse" style="">
+            <ul class="nav navbar-nav so-header">
+                <li role="presentation"><a href="./index.html" class="">问答</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation">
+                    <a href="./login.html" class="">登录</a>
+                </li>
+                <li role="presentation">
+                    <a href="./signup.html" class="">注册</a>
+                </li>
+
+                <!--                <li role="presentation">-->
+                <!--                    <div class="r-p" style="position:relative;">-->
+                <!--                        <div class="face">-->
+                <!--                            <img class="face-img" src="./img/1.png">-->
+                <!--                        </div>-->
+                <!--                        <div class="nav-userinfo" style="display:none;">-->
+                <!--                            <ul class="menu">-->
+                <!--                                <li class="open-li" style="border-top: 1px solid #e9e9e9;"><a href="http://www.manks.top/user/logout" data-method="post">退出</a></li>-->
+                <!--                            </ul>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="main" style="">
+
+    <div class="login-box">
+        <div class="row" style="margin:0;">
+            <div class="" style="margin: 0 auto;width: 350px;">
+                <div class="panel panel-default box-common">
+                    <div class="panel-heading">
+                        登录
+                        <span style="float: right;"><a href="./signup.html">还没有帐号？</a></span>
+                    </div>
+                    <div class="panel-body">
+                        <form id="login-form" action="./login.html" method="post">
+                            <div class="form-group field-loginform-email required">
+                                <label class="control-label" for="loginform-email">邮箱地址</label>
+                                <input type="text" id="loginform-email" class="form-control" name="LoginForm[email]"
+                                       placeholder="请输入您的邮箱地址">
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-loginform-password required">
+                                <label class="control-label" for="loginform-password">密码</label>
+                                <input type="password" id="loginform-password" class="form-control"
+                                       name="LoginForm[password]" placeholder="请输入您的密码">
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fa fa-btn fa-sign-in"></i>登录
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.login-box -->
+
+
+</section>
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                    <span>
+                        <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备xxx号</a>
+                    </span>
+                <span>
+                        <img src="./img/beian.png" alt="浙公网安备"
+                             style="width: 15px; height: 15px; line-height: 15px; margin-top: -4px;">
+                        <a href="#" target="_blank">浙公网安备 xxx号</a>
+                    </span>
+                <span>Copyright © <a href="#">白狼栈</a> 2016-2022</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/highlight.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/layer.js"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+    $('.face, .nav-userinfo').mousemove(function () {
+        $('.nav-userinfo').show();
+    }).mouseout(function () {
+        $('.nav-userinfo').hide();
+    });
+});
+</script>
+</body>
+</html>
