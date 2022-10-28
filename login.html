@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap-3.3.4.min.css" rel="stylesheet">
     <link href="./css/font-awesome-4.3.0.min.css" rel="stylesheet">
-    <link href="./css/site.css" rel="stylesheet">
+    <link href="./css/site.css?1005" rel="stylesheet">
     <link href="./css/simplemde.min.css" rel="stylesheet">
     <link href="./css/layer.css" rel="stylesheet" id="layuicss-skinlayercss">
 </head>
@@ -26,12 +26,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <span class="navbar-brand" style="cursor: pointer;">白狼栈</span>
+            <span class="navbar-brand" style="cursor: pointer;">趣问趣答</span>
         </div>
-        <!-- <div id="navbar" class="collapse navbar-collapse" style="overflow: auto!important;"> -->
         <div id="navbar" class="collapse navbar-collapse" style="">
             <ul class="nav navbar-nav so-header">
                 <li role="presentation"><a href="./index.html" class="">问答</a></li>
+
+                <li class="icon-search">
+                    <div id="search" class="searchbar">
+                        <i class="fa fa-search" role="icon" style="width: 18px;height: 18px;line-height: 18px;"></i>
+                        <input name="q" id="q" type="text" placeholder="搜索" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                        <button type="submit" class="btn js-search-submit s-btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -127,6 +136,19 @@
         $('.nav-userinfo').show();
     }).mouseout(function () {
         $('.nav-userinfo').hide();
+    });
+
+    var e = $(".so-header"),
+        t = $(".js-search-field"),
+        n = $(".js-search-submit"),
+        i = !1;
+    t.on('focus', function () {
+        e.addClass("_search-open");
+    }).on('blur', function () {
+        i?(t.focus(),i=!1):e.removeClass("_search-open");
+    });
+    n.mousedown(function(){
+        i=!0
     });
 });
 </script>

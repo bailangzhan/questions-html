@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title> 白狼栈 </title>
+    <title> 趣问趣答 </title>
     <meta name="description" content="">
     <meta name="keywords" content="学习">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 </head>
 <body class="home-template">
 
-<nav class="navbar navbar-inverse site-navbar"> <!-- navbar-fixed-top 固定导航栏 -->
+<nav class="navbar navbar-inverse site-navbar">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -26,11 +26,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <span class="navbar-brand" style="cursor: pointer;">白狼栈</span>
+            <span class="navbar-brand" style="cursor: pointer;">趣问趣答</span>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="">
             <ul class="nav navbar-nav so-header">
                 <li role="presentation"><a href="./index.html" class="">问答</a></li>
+
+                <li class="icon-search">
+                    <div id="search" class="searchbar">
+                        <i class="fa fa-search" role="icon" style="width: 18px;height: 18px;line-height: 18px;"></i>
+                        <input name="q" id="q" type="text" placeholder="搜索" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                        <button type="submit" class="btn js-search-submit s-btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -41,19 +51,18 @@
                     <a href="./signup.html" class="">注册</a>
                 </li>
 
-<!--                <li role="presentation">-->
-<!--                    <div class="r-p" style="position:relative;">-->
-<!--                        <div class="face">-->
-<!--                            <img class="face-img" src="./img/1.png">-->
-<!--                        </div>-->
-<!--                        <div class="nav-userinfo" style="display:none;">-->
-<!--                            <ul class="menu">-->
-<!--                                <li class="open-li" style="border-top: 1px solid #e9e9e9;"><a-->
-<!--                                        href="#/user/logout" data-method="post">退出</a></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </li>-->
+                <!--                <li role="presentation">-->
+                <!--                    <div class="r-p" style="position:relative;">-->
+                <!--                        <div class="face">-->
+                <!--                            <img class="face-img" src="./img/1.png">-->
+                <!--                        </div>-->
+                <!--                        <div class="nav-userinfo" style="display:none;">-->
+                <!--                            <ul class="menu">-->
+                <!--                                <li class="open-li" style="border-top: 1px solid #e9e9e9;"><a href="http://www.manks.top/user/logout" data-method="post">退出</a></li>-->
+                <!--                            </ul>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </li>-->
             </ul>
         </div>
     </div>
@@ -70,7 +79,7 @@
                             <div class="post-content">
                                 <form id="post-ask" action="./ask.html" method="post">
                                     <div class="form-group field-question-title required">
-                                        <label class="control-label" for="question-title">提问题</label>
+                                        <label class="control-label titles" for="question-title">提问题</label>
                                         <input type="text" id="question-title" class="form-control"
                                                name="Question[title]" maxlength="100" placeholder="好的标题能够吸引更多人回复哦">
                                         <div class="help-block"></div>
@@ -79,14 +88,8 @@
                                         <textarea id="question-content" name="Question[content]" style="display: none;"></textarea>
                                         <div class="help-block"></div>
                                     </div>
-                                    <div class="form-group field-question-pay_money">
-                                        <label class="control-label" for="question-pay_money">有偿支付（可选）</label>
-                                        <input type="text" id="question-pay_money" class="form-control"
-                                               name="Question[pay_money]" placeholder="有尝支付金额，至少1元">
-                                        <div class="help-block"></div>
-                                    </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-blue btn-ask">提交</button>
+                                        <button type="submit" class="btn btn-primary btn-blue btn-ask" style="float: right;">提交</button>
                                     </div>
                                 </form>
                             </div>
@@ -96,29 +99,18 @@
 
                 <aside class="col-md-3 sidebar">
                     <div class="widget box-common">
-                        <div class="title title2"><h4>最新评论</h4></div>
-                        <div class="content new-comment">
-                            <div class="ds-recent-comments" id="ds-recent-comments">
-                                <li class="ds-comment ds-show-avatars">
-                                    <div class="ds-avatar">
-                                        <a target="_blank" href="javascript:void(0);" title="Nicholas">
-                                            <img class="lazyload" src="./img/head.jpg" data-src="" alt="Nicholas" style="width:32px;height:32px">
-                                        </a>
-                                    </div>
-                                    <div class="ds-meta">
-                                        <a target="_blank" href="javascript:void(0);">作者张三</a>
-                                        <span class="ds-time" title="2022-08-26 09:25">2022-08-26</span>
-                                    </div>
-                                    <div class="ds-thread-title">
-                                        在 <a href="#" target="_blank" class="main-title-a bar-a">xxx</a> 中评论
-                                    </div>
-                                    <div class="ds-excerpt"><a href="#" target="_blank" class="main-title-a bar-a" title="这里是评论的内容">这里是评论的内容 </a></div>
+                        <div class="title title2">
+                            <h4>热门问题</h4>
+                        </div>
+                        <div class="content">
+                            <ul class="tab-rank">
+                                <li>
+                                    <a href="#" class="main-title-a bar-a">hyperf 微服务-概述</a>
                                 </li>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </aside>
-
             </div>
         </div>
     </section>
@@ -136,7 +128,7 @@
                              style="width: 15px; height: 15px; line-height: 15px; margin-top: -4px;">
                         <a href="#" target="_blank">浙公网安备 xxx号</a>
                     </span>
-                <span>Copyright © <a href="#">白狼栈</a> 2016-2022</span>
+                <span>Copyright © <a href="#">趣问趣答</a> 2016-2022</span>
             </div>
         </div>
     </div>
@@ -160,6 +152,19 @@
             toolbar: ["code","bold","italic","strikethrough","heading","quote","link","image","table","preview"],
             element: document.getElementById('question-content')
         });
+
+    var e = $(".so-header"),
+        t = $(".js-search-field"),
+        n = $(".js-search-submit"),
+        i = !1;
+    t.on('focus', function () {
+        e.addClass("_search-open");
+    }).on('blur', function () {
+        i?(t.focus(),i=!1):e.removeClass("_search-open");
+    });
+    n.mousedown(function(){
+        i=!0
+    });
 });
 </script>
 </body>
